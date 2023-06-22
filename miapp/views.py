@@ -31,3 +31,21 @@ def index(request):
 'cursos': cursos
 })
 
+from django.http import HttpResponse
+
+def rango(request):
+    numeros_primos = []
+    for num in range(2, 101):
+        es_primo = True
+        for i in range(2, int(num/2) + 1):
+            if (num % i) == 0:
+                es_primo = False
+                break
+        if es_primo:
+            numeros_primos.append(num)
+
+    return render(request,'rango.html',{
+'titulo':'Rango',
+
+'rango_numeros':numeros_primos
+})
