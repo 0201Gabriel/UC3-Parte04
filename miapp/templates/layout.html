@@ -3,9 +3,7 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>
-            
-        </title>
+        
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}" />
         
@@ -13,18 +11,23 @@
     </head>
     <body>
         
-        <header style=>
-            <div style= "display: flex;
+        <header>
+            <div style="display: flex;
             justify-content: center;
             align-items: center;">
                 <img style="display: block;
-                max-width: 40%;
-                max-height: 40%;" src="{% static 'imagenes/logo.png' %}" />
-
+                max-width: 50%;
+                max-height: 50%;" src="{% static 'imagenes/logo.png' %}" />
+         
             </div>
             </header>
             <nav>
-            
+            <ul>
+                <li>
+                    <a href="{% url 'inicio' %}"> Inicio</a>
+                    </li>
+                 
+            </ul>
             </nav>
             <div class="barra">
                 <span class="esquina-izquierda"></span>
@@ -32,10 +35,14 @@
                 <span class="esquina-derecha"></span>
             </div>
             <div id="content">
-        
+                <div class="box">
+                    {% block content %}
+                    <strong> Contenido en layout (Padre) </strong>
+                    {% endblock %}
+                    </div>
             </div>
             <footer>
-                UNTELS - LP3 - Paucar - {% now "d/m/Y h:m:s" %}
+                UNTELS - LP3 &copy;  {% now "d/m/Y h:m:s" %}
                     
     </body>
 </html>

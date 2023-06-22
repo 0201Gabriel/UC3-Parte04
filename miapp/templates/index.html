@@ -1,8 +1,19 @@
 {% extends 'layout.html' %}
-{% block title %}
-    {{titulo}}
-{% endblock %}
+
 {% block content %}
-<h1 class="title">Página {{titulo}}</h1>
-<p>Usango templates</p>
+
+
+
+
+<p> <strong> Cursos Registrados:
+</strong> </p>
+<ul>
+{% for curso in cursos %}
+    <li>{{forloop.counter}}. {{curso}}</li>
+
+{% endfor %}
+</ul>
+
+
+
 {% endblock %}
